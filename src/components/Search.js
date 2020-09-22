@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
-import Button from '../components/Button'
-
-
 class Search extends Component {
+
   render() {
     return (
       <div>
         <form>
-          <input />
-          <Button 
-            action={this.changeLocation}
-            buttonTitle = 'search'
+          <input 
+            type='text'
+            name='location'
+            placeholder="city or zipcode"
           />
         </form>
       </div>

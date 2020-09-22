@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import Search from './SearchComponent'
 import { connect } from 'react-redux'
 import { changeLocation } from '../actions/index' 
+import Button from '../components/Button'
+import Search from '../components/Search'
 
 class CurrentLocation extends Component {
 
@@ -14,9 +15,13 @@ class CurrentLocation extends Component {
     return (
       <div>
          <div>
-          <Search />
         </div>
         <div>
+          <Search />
+          <Button 
+            buttonTitle='search'
+            action={this.changeLocation}
+          />
           Current Location: {currentLocation}
         </div>
       </div>
