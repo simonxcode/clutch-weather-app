@@ -31,7 +31,7 @@ class CurrentLocation extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    currentLocation: state.currentLocationReducer.currentLocation
+    // currentLocation: state.currentLocationReducer.currentLocation
   }
 }
 
