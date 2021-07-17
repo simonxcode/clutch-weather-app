@@ -1,16 +1,13 @@
 import React from 'react';
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import Header from './components/Header'
-import CurrentLocation from './containers/CurrentLocationComponent'
-import store from './store'
+import ReactDOM from 'react-dom';
+import App from './App';
+import store from './app/store'
+import { Provider } from 'react-redux';
 
-render (
+
+ReactDOM.render (
   <Provider store={store}>
-    <Header />
-  <div>
-    <CurrentLocation />
-  </div>
+    <App />
   </Provider>,
 
   document.getElementById('root')
