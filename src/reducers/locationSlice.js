@@ -18,7 +18,7 @@
 /* Redux Toolkit */
 
 //1. import createSlice API
-import { createSlice } from 'reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 //2. declare initial state 
 const initialState = {
@@ -27,19 +27,20 @@ const initialState = {
 
 //3. declare slice container
 export const locationSlice = createSlice({
+  //5. declare slice name
   name: 'location',
   initialState,
-  //4. declare reducer function
+  //6. declare reducer function
   reducers: {
-    //5. declare action creator
+    //7. declare action creator
     changeLocation: (state, action ) => {
       state.value = action.payload
     },
   },
 })
 
-//7. export action creator
+//8. export action creator
 export const { changeLocation } = locationSlice.actions
 
-//8. export reducer function
+//9. export reducer function
 export default locationSlice.reducer
