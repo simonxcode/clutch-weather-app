@@ -1,12 +1,13 @@
 import React from 'react';
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { Location } from './features/location/Location'
+import ReactDOM from 'react-dom';
+import App from './App';
 import store from './app/store'
+import { Provider } from 'react-redux';
 
-render (
+
+ReactDOM.render (
   <Provider store={store}>
-    <Location />
+    <App />
   </Provider>,
 
   document.getElementById('root')
