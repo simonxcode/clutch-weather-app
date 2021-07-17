@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { changeLocation } from '../actions/index' 
@@ -31,7 +32,7 @@ class CurrentLocation extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    // currentLocation: state.currentLocationReducer.currentLocation
+    currentLocation: state.currentLocationReducer.currentLocation
   }
 }
 
@@ -44,3 +45,20 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentLocation)
+*/
+
+/* new Location component with Redux State and Action */
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { changeLocation } from '../reducers/locationSlice'
+
+export function Location() {
+  return (
+    <div>
+      <form>
+        <input type='text' name='location' placeholder='city or zipcode'></input>
+        <button>search</button>
+      </form>
+    </div>
+  );
+}
