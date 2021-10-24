@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 import { changeLocation, selectLocation } from './locationSlice'
+import useForecast from '../../hooks/useForecast'
 
 export function Location() {
   const location = useSelector(selectLocation)
   const dispatch = useDispatch()
   const [assignedLocation, setAssignedLocation] = useState("")
+  const { submitRequest } = useForecast()
 
   const onSubmit = e => {
     e.preventDefault()
+    if(!assignedLocation || assignedLocation === '') return 
+    submitRequest({assignedLocation})
   }
 
   return (
@@ -28,4 +33,8 @@ export function Location() {
       </form>
     </div>
   );
+}
+
+Location.protoTypes = {
+  submitRequest: PropTypes.func.isRequired
 }
