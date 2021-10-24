@@ -7,19 +7,25 @@ export function Location() {
   const dispatch = useDispatch()
   const [assignedLocation, setAssignedLocation] = useState("")
 
+  const onSubmit = e => {
+    e.preventDefault()
+  }
+
   return (
     <div>
-      <input 
-        type='text' 
-        name='location' 
-        placeholder='city or zipcode' 
-        value={assignedLocation} 
-        onChange={e => setAssignedLocation(e.target.value)} 
-      />
-      <button onClick={() => dispatch(changeLocation(assignedLocation))}>search</button>
-      <div>
-        <span>{location}</span> 
-      </div>
+      <form onSubmit={onSubmit}>
+        <input 
+          type='text' 
+          name='location' 
+          placeholder='city or zipcode' 
+          value={assignedLocation} 
+          onChange={e => setAssignedLocation(e.target.value)} 
+        />
+        <button onClick={() => dispatch(changeLocation(assignedLocation))}>search</button>
+        <div>
+          <span>{location}</span> 
+        </div>
+      </form>
     </div>
   );
 }
