@@ -2,15 +2,11 @@ import { useState } from 'react';
 
 const useForecast = () => {
   const [forecast, setForecast] = useState(null)
-
-  //call api 
-  const submitRequest = assignedLocation => {
-    console.log({assignedLocation})
-  }
-
+  
+  console.log("hello I am a hook!")
+  
   return {
     forecast,
-    submitRequest
   }
 }
 

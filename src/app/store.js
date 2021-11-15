@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
-import locationReducer from "../features/location/locationSlice"
+import locationReducer from "../features/form/locationSlice"
 
 export default configureStore({
   reducer: {

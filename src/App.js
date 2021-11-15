@@ -1,11 +1,11 @@
 import React from 'react';
-import { Location } from './features/location/Location';
+import Page from './features/page';
 
 function App() {
   return (
     <div>
     Clutch Weather App
-      <Location />
+      <Page />
     </div>
   );
 }
