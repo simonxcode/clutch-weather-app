@@ -5,10 +5,10 @@ import useForecast  from '../../hooks/useForecast'
 
 
 const Page = () => {
-  const { forecast } = useForecast()
+  const { forecast, submitRequest } = useForecast()
 
   const onSubmit = value => {
-    console.log({ value })  
+    submitRequest({ value })  
   }
 
   return (
