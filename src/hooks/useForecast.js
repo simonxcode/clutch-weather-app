@@ -8,8 +8,14 @@ const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URL}`
 const useForecast = () => {
   const [forecast, setForecast] = useState(null)
 
+  //call API
   const submitRequest = async location => {
-    const response = await axios(`${REQUEST_URL}/search`, { params: { query: location.value } })
+    //1. get location
+    const { data } = await axios(`${REQUEST_URL}/search`, { params: { query: location.value } })
+     //2. get location weather
+    console.log({ data })
+ 
+    const response = await axios(`${REQUEST_URL}/${data[0].woeid}`)
     console.log({ response })
   }
   
