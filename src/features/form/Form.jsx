@@ -7,7 +7,7 @@ const Form = ({ submitRequest }) => {
   const location = useSelector(selectLocation)
   const dispatch = useDispatch()
 
-  const [assignedLocation, setAssignedLocation] = useState("")
+  const [assignedLocation, setAssignedLocation] = useState('')
 
   const onSubmit = e => {
     e.preventDefault()
@@ -26,9 +26,6 @@ const Form = ({ submitRequest }) => {
           onChange={e => setAssignedLocation(e.target.value)} 
         />
         <button onClick={() => dispatch(changeLocation(assignedLocation))}>search</button>
-        <div>
-          <span>{location}</span>
-        </div>
       </form>
     </div>
   );

@@ -6,6 +6,7 @@ const CROSS_DOMAIN = 'https://the-ultimate-api-challenge.herokuapp.com'
 const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URL}`
 
 const useForecast = () => {
+  const [isError, setError] = useState(false)
   const [forecast, setForecast] = useState(null)
 
   //call API
@@ -14,12 +15,18 @@ const useForecast = () => {
     const { data } = await axios(`${REQUEST_URL}/search`, { params: { query: location.value } })
      //2. get location weather
     console.log({ data })
+
+    if(!data || data.length === 0) {
+      setError('Could not find location')
+      return
+    }
  
     const response = await axios(`${REQUEST_URL}/${data[0].woeid}`)
     console.log({ response })
   }
   
   return {
+    isError,
     forecast,
     submitRequest
   }
