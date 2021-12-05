@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { changeLocation, selectLocation } from './locationSlice'
 
 const Form = ({ submitRequest }) => {
-  const location = useSelector(selectLocation)
+  const location = useSelector(selectLocation) //need to place somewhere else 
   const dispatch = useDispatch()
 
   const [assignedLocation, setAssignedLocation] = useState('')

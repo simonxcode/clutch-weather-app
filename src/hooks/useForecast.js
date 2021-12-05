@@ -9,20 +9,32 @@ const useForecast = () => {
   const [isError, setError] = useState(false)
   const [forecast, setForecast] = useState(null)
 
-  //call API
-  const submitRequest = async location => {
-    //1. get location
+  const getWoeid = async location => {
     const { data } = await axios(`${REQUEST_URL}/search`, { params: { query: location.value } })
-     //2. get location weather
-    console.log({ data })
-
     if(!data || data.length === 0) {
       setError('Could not find location')
       return
     }
- 
-    const response = await axios(`${REQUEST_URL}/${data[0].woeid}`)
-    console.log({ response })
+    return data[0]
+  } 
+
+  const getForecastData = async woeid => {
+    const { data } = await axios(`${REQUEST_URL}/${woeid}`)
+    if (!data || data.length === 0) {
+      setError('Something went wrong')
+      return
+    }
+    return data
+  }
+
+  const submitRequest = async location => {
+    setError(false)
+    const response = await getWoeid(location)
+    if(!response?.woeid) return
+
+    const data = await getForecastData(response.woeid)
+    if(!data) return
+    console.log({ data })
   }
   
   return {
