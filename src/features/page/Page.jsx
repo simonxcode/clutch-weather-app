@@ -16,7 +16,7 @@ const Page = () => {
     <div>
       <Form submitRequest={ onSubmit } />
       {isError && <Error message={isError} />}
-      {forecast && <Forecast />}
+      {forecast && <Forecast forecast={forecast} />}
     </div>
   )
  
