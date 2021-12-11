@@ -1,6 +1,6 @@
 import moment from 'moment' 
 
-const getCurrentDayForecast = (data, title) = ({
+const getCurrentDayForecast = (data, title) => ({
   weekday: moment(data.applicable_date).format('dddd'),
   date: moment(data.applicable_date).format('MMMM Do'),
   location: title, 
@@ -9,4 +9,4 @@ const getCurrentDayForecast = (data, title) = ({
   weatherDescription: data.weather_state_name
 })
 
-export default getCurrentDataForecast
+export default getCurrentDayForecast

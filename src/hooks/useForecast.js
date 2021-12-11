@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios'
 
-import getCurrentDataForecast from '../helpers/getCurrentDataForecast';
+import getCurrentDayForecast from '../helpers/getCurrentDayForecast';
 
 const BASE_URL = 'https://www.metaweather.com/api/location'
 const CROSS_DOMAIN = 'https://the-ultimate-api-challenge.herokuapp.com'
@@ -30,8 +30,8 @@ const useForecast = () => {
   }
 
   const gatherForecastData = data => {
-    const currentDay = getCurrentDataForecast(data.consolidated_weather[0], data.title)
-    setForecast(currentDay)
+    const currentDay = getCurrentDayForecast(data.consolidated_weather[0], data.title)
+    setForecast({ currentDay })
   }
 
   const submitRequest = async location => {

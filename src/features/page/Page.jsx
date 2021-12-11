@@ -15,10 +15,10 @@ const Page = () => {
   return (
     <div>
       <Form submitRequest={ onSubmit } />
-      {isError && <Error message={isError} />}
-      {forecast && <Forecast forecast={forecast} />}
+      {isError && <Error message={ isError } />}
+      {forecast && <Forecast forecast={ forecast } />}
     </div>
-  )
+  ) 
  
 }
 
