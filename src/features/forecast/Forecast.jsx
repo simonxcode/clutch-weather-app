@@ -1,9 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import CurrentDay from '../currentDay'
 
-const Forecast = () => (
+const Forecast = ({ forecast }) => (
   <div>
-    <span role='img' aria-label='sunshine face'>72 and sunny 🌞 </span>
+    <CurrentDay { ...forecast.currentDay }/>
   </div>
 )
+
+Forecast.propTypes = {
+  forecast: PropTypes.shape({
+    currentDay: PropTypes.object, 
+  })
+}
 
 export default Forecast

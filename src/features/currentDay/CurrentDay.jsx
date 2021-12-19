@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import locationIcon from './assets/maps-and-flag.png'
+import locationIcon from './assets/maps-and-flags.png'
 
 const CurrentDay = ({ weekday, date, location, temperature, weatherIcon, weatherDescription }) => (
   <div>

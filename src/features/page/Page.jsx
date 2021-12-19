@@ -4,7 +4,6 @@ import Error from '../error'
 import Forecast from '../forecast'
 import useForecast  from '../../hooks/useForecast'
 
-
 const Page = () => {
   const { isError, forecast, submitRequest } = useForecast()
 
