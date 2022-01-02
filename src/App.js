@@ -3,7 +3,7 @@ import Page from './features/page';
 
 function App() {
   return (
-    <div className="bg-sky-100">
+    <div className="bg-green-200 opacity-75">
     Clutch Weather App
       <Page />
     </div>
