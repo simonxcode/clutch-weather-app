@@ -25,7 +25,12 @@ const Form = ({ submitRequest }) => {
           value={assignedLocation} 
           onChange={e => setAssignedLocation(e.target.value)} 
         />
-        <button onClick={() => dispatch(changeLocation(assignedLocation))}>search</button>
+        <button 
+          onClick={() => dispatch(changeLocation(assignedLocation))} 
+          className="font-bold border-solid border-2 border-stone-600"
+        >
+          search
+        </button>
       </form>
     </div>
   );
