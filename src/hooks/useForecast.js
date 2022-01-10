@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios'
 import getCurrentDayForecast from '../helpers/getCurrentDayForecast';
+import getCurrentDayDetails from '../helpers/getCurrentDayDetails';
 
 const BASE_URL = 'https://www.metaweather.com/api/location'
 const CROSS_DOMAIN = 'https://the-ultimate-api-challenge.herokuapp.com'
@@ -16,6 +17,7 @@ const useForecast = () => {
       setError('Could not find location')
       return
     }
+    console.log('request location id', data[0])
     return data[0]
   } 
 
@@ -25,12 +27,17 @@ const useForecast = () => {
       setError('Something went wrong')
       return
     }
+    console.log('request data', data)
     return data
   }
 
   const gatherForecastData = data => {
     const currentDay = getCurrentDayForecast(data.consolidated_weather[0], data.title)
-    setForecast({ currentDay })
+    const currentDayDetails = getCurrentDayDetails(data.consolidated_weather[0])
+    setForecast({
+      currentDay,
+      currentDayDetails
+    })
   }
 
   const submitRequest = async location => {
@@ -42,6 +49,7 @@ const useForecast = () => {
     if(!data) return
 
     gatherForecastData(data)
+    console.log('render data', data)
   }
   
   return {
