@@ -2,19 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const CurrentDayDetails = ({ humidity, windSpeed, windDirection, highTemp, lowTemp, sunrise, sunset }) => (
-  <div>
-    Current Day Details
-    <p>Humidity: {humidity}</p>
-    <p>Wind: {windSpeed}</p>
-    <p>Wind direction: {windDirection}</p>
-    <p>High Temp: {highTemp}</p>
-    <p>Low Temp: {lowTemp}</p>
-    <p>Sunrise: {sunrise}</p>
-    <p>Sunset: {sunset}</p>
-  </div>
-)
+    <div>
+      Current Day Details
+      <p>Humidity: {humidity}</p>
+      <p>Wind: {windSpeed}</p>
+      <p>Wind direction: {windDirection}</p>
+      <p>High Temp: {highTemp}</p>
+      <p>Low Temp: {lowTemp}</p>
+      <p>Sunrise: {sunrise}</p>
+      <p>Sunset: {sunset}</p>
+    </div>
+  )
 
-export default CurrentDayDetails
 
 CurrentDayDetails.propTypes = {
   humidity: PropTypes.number.isRequired,
@@ -25,4 +24,7 @@ CurrentDayDetails.propTypes = {
   // sunrise: PropTypes.string.isRequired,
   // sunset: PropTypes.string.isRequired,
 }
+
+export default CurrentDayDetails
+
 

@@ -7,15 +7,16 @@ import UpcomingDays from '../upcomingDays'
 const Forecast = ({ forecast }) => (
   <div>
     <CurrentDay { ...forecast.currentDay }/>
-    <CurrentDayDetails { ...forecast.currentDayDetails }/>
-    <UpcomingDays />
+    <CurrentDayDetails forecast={forecast.currentDayDetails }/>
+    <UpcomingDays days={forecast.upcomingDays}/>
   </div>
 )
 
 Forecast.propTypes = {
   forecast: PropTypes.shape({
     currentDay: PropTypes.object,
-    currentDayDetails: PropTypes.object 
+    currentDayDetails: PropTypes.object, 
+    upcomingDays: PropTypes.array 
   })
 }
 
