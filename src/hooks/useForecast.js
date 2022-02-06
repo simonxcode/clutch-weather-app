@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios'
 import getCurrentDayForecast from '../helpers/getCurrentDayForecast';
-import getCurrentDayDetails from '../helpers/getCurrentDayDetails';
+import getCurrentDayDetails from '../helpers/getCurrentDayDetailsItems';
 import getUpcomingDays from '../helpers/getUpcomingDays'
 
 const BASE_URL = 'https://www.metaweather.com/api/location'

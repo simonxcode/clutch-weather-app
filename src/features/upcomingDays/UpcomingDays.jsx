@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import UpcomingDaysDetails from '../upcomingDaysDetails'
+import UpcomingDaysDetails from '../UpcomingDaysDetails'
 
 const UpcomingDays = ({ days }) => (
     <div>

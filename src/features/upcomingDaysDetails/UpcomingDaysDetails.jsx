@@ -15,8 +15,8 @@ const UpcomingDaysDetails = ({ iconURL, weekday, lowTemp, highTemp }) => (
 UpcomingDaysDetails.propTypes = {
   iconUrl: PropTypes.string.isRequired,
   weekday: PropTypes.string.isRequired,
-  highTemp: PropTypes.string.isRequired,
-  lowTemp: PropTypes.string.isRequired
+  highTemp: PropTypes.number.isRequired,
+  lowTemp: PropTypes.number.isRequired
 }
 
 export default UpcomingDaysDetails

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CurrentDay from '../currentDay'
-import CurrentDayDetails from '../currentDayDetails'
-import UpcomingDays from '../upcomingDays'
+import CurrentDay from '../CurrentDay'
+import CurrentDayDetails from '../CurrentDayDetails'
+import UpcomingDays from '../UpcomingDays'
 
 const Forecast = ({ forecast }) => (
   <div>
@@ -15,7 +15,7 @@ const Forecast = ({ forecast }) => (
 Forecast.propTypes = {
   forecast: PropTypes.shape({
     currentDay: PropTypes.object,
-    currentDayDetails: PropTypes.object, 
+    currentDayDetails: PropTypes.array, 
     upcomingDays: PropTypes.array 
   })
 }
