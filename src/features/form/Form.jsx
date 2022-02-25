@@ -21,7 +21,7 @@ const Form = ({ submitRequest }) => {
         <input 
           type='text' 
           name='location' 
-          placeholder='city or zipcode' 
+          placeholder='city' 
           value={assignedLocation} 
           onChange={e => setAssignedLocation(e.target.value)} 
         />

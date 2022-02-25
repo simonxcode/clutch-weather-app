@@ -9,8 +9,7 @@ const CurrentDayDetailsItems = ({ name, value, unit }) => (
 
 CurrentDayDetailsItems.propTypes = {
   name: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
-  unit: PropTypes.string.isRequired
+  unit: PropTypes.string
 }
 
 export default CurrentDayDetailsItems

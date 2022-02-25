@@ -12,7 +12,6 @@ const getCurrentDayDetailsItems = (data, sun_rise, sun_set) => [
   {
     name: 'wind direction',
     value: data.wind_direction_compass,
-    unit: 'NA'
   },
   {
     name: 'high',

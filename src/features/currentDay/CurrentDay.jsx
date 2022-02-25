@@ -14,7 +14,7 @@ const CurrentDay = ({ weekday, date, location, temperature, weatherIcon, weather
     </div>
     <div>
       <img src={ weatherIcon } alt='weather icon' className="w-12" />
-      <span className="inline-block">{ temperature }</span>
+      <span className="inline-block">{temperature} °C</span>
       <p className="inline-block">{weatherDescription}</p>
     </div>
   </div>
