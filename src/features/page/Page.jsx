@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../header'
 import Form from '../form'
 import Error from '../error'
 import Forecast from '../forecast'
@@ -13,6 +14,7 @@ const Page = () => {
 
   return (
     <div>
+      <Header />
       <Form submitRequest={ onSubmit } />
       {isError && <Error message={ isError } />}
       {forecast && <Forecast forecast={ forecast } />}
