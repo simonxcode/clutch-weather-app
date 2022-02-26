@@ -16,7 +16,7 @@ const Form = ({ submitRequest }) => {
   }
     
   return (
-    <div>
+    <div className="flex justify-center items-center p-4">
       <form onSubmit={onSubmit}>
         <input 
           type='text' 
