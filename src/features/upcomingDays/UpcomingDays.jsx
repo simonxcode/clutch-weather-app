@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import UpcomingDaysDetails from '../UpcomingDaysDetails'
 
 const UpcomingDays = ({ days }) => (
-  <div className="bg-red-100 p-4">
+  <div className="p-4">
       Upcoming Days Forecast
       <ul className="flex">
         {days.map(day => (
