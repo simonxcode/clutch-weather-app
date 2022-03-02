@@ -6,7 +6,7 @@ import UpcomingDays from '../UpcomingDays'
 
 const Forecast = ({ forecast }) => (
   <div className="flex justify-center items-center">
-    <div className="xs:block md:flex grid grid-cols-3 w-144 h-108 p-4 bg-gradient-radial from-sky-100 via-sky-100 to-sky-50 rounded-md">
+    <div className="xs:block md:flex grid grid-cols-3 w-144 h-108 bg-gradient-radial from-sky-100 via-sky-100 to-sky-50 rounded-md">
       <CurrentDay className="col-span-1"{...forecast.currentDay} />
       <div className="col-span-2" >
         <CurrentDayDetails forecast={forecast.currentDayDetails} />

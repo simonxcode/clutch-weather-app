@@ -3,19 +3,19 @@ import PropTypes from 'prop-types'
 import locationIcon from './assets/maps-and-flags.png'
 
 const CurrentDay = ({ weekday, date, location, temperature, weatherIcon, weatherDescription }) => (
-  <div className="p-4">
-    <div>
-      <img src={locationIcon} alt='location pin icon' className="w-4 inline-block" />
-      <span className="inline-block">{location}</span>
+  <div className="m-2 bg-slate-50">
+    <div className="pt-2 pr-2 pl-2">
+      <img src={locationIcon} alt='location pin icon' className="inline-block w-5 mr-1 mb-2" />
+      <span className="text-2xl pr-2">{location}</span>
     </div>
-    <div>
-      <p className="inline-block">{weekday}, </p>
+    <div className="pr-2 pl-2 pb-2">
+      <p className="inline-block pr-1">{weekday},</p>
       <p className="inline-block">{date}</p>
     </div>
     <div>
-      <img src={ weatherIcon } alt='weather icon' className="w-12" />
-      <span className="inline-block">{temperature} °C</span>
-      <p className="inline-block">{weatherDescription}</p>
+      <img src={weatherIcon} alt='weather icon' className="inline-block w-20 p-2" />
+      <span className="text-5xl align-middle p-2">{temperature} °C</span>
+      <p className="block text-2xl p-2">{weatherDescription}</p>
     </div>
   </div>
 )
