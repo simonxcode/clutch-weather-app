@@ -24,11 +24,11 @@ const Form = ({ submitRequest }) => {
           placeholder='city' 
           value={assignedLocation} 
           onChange={e => setAssignedLocation(e.target.value)} 
-          className="border-2 mx-2 pl-1 pr-6"
+          className="border-2 mx-2 pl-1 pr-6 text-sky-900"
         />
         <button 
           onClick={() => dispatch(changeLocation(assignedLocation))} 
-          className="font-bold border-solid border-2 border-stone-600 px-4 rounded-md"
+          className="font-bold border-solid border-2 border-stone-600 px-4 rounded-md text-sky-700"
         >
           search
         </button>

@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const CurrentDayDetailsItems = ({ name, value, unit }) => (
-    <div>
-      <p>{name}: {value}{unit}</p>
+  <div className="flex justify-between text-sky-900">
+    <p className="font-semibold">{name}:</p>
+    <span className="pl-1 font-normal">{value}{unit}</span>
     </div>
   )
 
