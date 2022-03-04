@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from '../header'
-import Form from '../form'
-import Error from '../error'
-import Forecast from '../forecast'
+import Header from '../Header'
+import Form from '../Form'
+import Error from '../Error'
+import Forecast from '../Forecast'
 import useForecast  from '../../hooks/useForecast'
 
 const Page = () => {

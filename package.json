@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
+    "autoprefixer": "^9.8.6",
     "axios": "^0.24.0",
     "cra-template": "1.0.3",
+    "init": "^0.1.2",
     "moment": "^2.29.1",
     "postcss-cli": "^9.1.0",
     "react": "^16.13.1",

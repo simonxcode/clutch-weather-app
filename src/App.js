@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from './features/page';
+import Page from './features/Page';
 
 function App() {
   return (
