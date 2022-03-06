@@ -1,23 +1,41 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import PropTypes from 'prop-types'
 import { changeLocation, selectLocation } from './locationSlice'
+import PropTypes from 'prop-types'
+import Axios from 'axios'
 
-const Form = ({ submitRequest }) => {
+const Form = () => {
   const location = useSelector(selectLocation) //need to place somewhere else 
   const dispatch = useDispatch()
 
   const [assignedLocation, setAssignedLocation] = useState('')
+  const [apiData, setApiData] = useState({}); 
 
-  const onSubmit = e => {
-    e.preventDefault()
-    if(!assignedLocation || assignedLocation === '') return 
-     (submitRequest(assignedLocation))
+  const apiKey = process.env.REACT_APP_API_KEY;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${assignedLocation}&appid=${apiKey}`;
+
+  const getApiData = () => {
+    Axios.get(apiUrl).then((res) => {
+      console.log(res)
+      setApiData(res.data)
+    }).catch((err) => {
+      console.log(err)
+    })
   }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    if (!assignedLocation || assignedLocation === '') return 
+    getApiData()
+  }
+
+  const kelvinToFarenheit = k => {
+    return ((k - 273.15) * 1.8 + 32.0).toFixed(0);
+  };
     
   return (
     <div className="flex justify-center items-center p-4">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
         <input 
           type='text' 
           name='location' 
@@ -33,6 +51,13 @@ const Form = ({ submitRequest }) => {
           search
         </button>
       </form>
+      <div className="p-2">
+        {apiData.main ? (
+          <p>{kelvinToFarenheit(apiData.main.temp)}°F</p>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 }
