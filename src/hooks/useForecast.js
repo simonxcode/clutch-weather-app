@@ -18,6 +18,7 @@ const useForecast = () => {
       setError('Could not find location')
       return
     }
+    console.log('woeid', data[0].woeid)
     console.log('request location id', data[0])
     return data[0]
   } 

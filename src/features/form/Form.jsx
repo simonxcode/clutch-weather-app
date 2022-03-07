@@ -12,12 +12,27 @@ const Form = () => {
   const [apiData, setApiData] = useState({}); 
 
   const apiKey = process.env.REACT_APP_API_KEY;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${assignedLocation}&appid=${apiKey}`;
+  const apiCurrentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${assignedLocation}&appid=${apiKey}`;
 
-  const getApiData = () => {
-    Axios.get(apiUrl).then((res) => {
+
+  const getCoordinates = () => {
+    Axios.get(apiCurrentUrl).then((res) => {
       console.log(res)
       setApiData(res.data)
+      getApiData()
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+
+  //coordinates mockup 
+  const lat = '33.749'
+  const lon = '-84.388'
+  const apiCoordinatesUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&&lon=${lon}&appid=${apiKey}`;
+
+  const getApiData = () => {
+    Axios.get(apiCoordinatesUrl).then((res) => {
+      console.log('one call payload', res)
     }).catch((err) => {
       console.log(err)
     })
@@ -26,7 +41,7 @@ const Form = () => {
   const handleSubmit = e => {
     e.preventDefault()
     if (!assignedLocation || assignedLocation === '') return 
-    getApiData()
+    getCoordinates()
   }
 
   const kelvinToFarenheit = k => {
@@ -54,7 +69,7 @@ const Form = () => {
       <div className="p-2">
         {apiData.main ? (
           <p>{kelvinToFarenheit(apiData.main.temp)}°F</p>
-        ) : (
+          ) : (
           ""
         )}
       </div>
