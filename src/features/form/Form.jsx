@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { changeLocation, selectLocation } from './locationSlice'
 import PropTypes from 'prop-types'
-import Axios from 'axios'
+import axios from 'axios'
 
 const Form = () => {
   const location = useSelector(selectLocation) //need to place somewhere else 
@@ -14,27 +14,17 @@ const Form = () => {
   const apiKey = process.env.REACT_APP_API_KEY;
   const apiCurrentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${assignedLocation}&appid=${apiKey}`;
 
-
   const getCoordinates = () => {
-    Axios.get(apiCurrentUrl).then((res) => {
-      console.log(res)
-      setApiData(res.data)
-      getApiData()
-    }).catch((err) => {
-      console.log(err)
-    })
-  }
-
-  //coordinates mockup 
-  const lat = '33.749'
-  const lon = '-84.388'
-  const apiCoordinatesUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&&lon=${lon}&appid=${apiKey}`;
-
-  const getApiData = () => {
-    Axios.get(apiCoordinatesUrl).then((res) => {
-      console.log('one call payload', res)
-    }).catch((err) => {
-      console.log(err)
+    axios.get(apiCurrentUrl)
+    .then(res => res.data)
+    .then(data => {
+      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&&lon=${data.coord.lon}&appid=${apiKey}`)
+        .then((res) => {
+          console.log(res)
+          setApiData(res.data)
+        }).catch((err) => {
+          console.log(err)
+        })
     })
   }
 
@@ -67,8 +57,8 @@ const Form = () => {
         </button>
       </form>
       <div className="p-2">
-        {apiData.main ? (
-          <p>{kelvinToFarenheit(apiData.main.temp)}°F</p>
+        {apiData.current ? (
+          <p>{kelvinToFarenheit(apiData.current.temp)}°F</p>
           ) : (
           ""
         )}
