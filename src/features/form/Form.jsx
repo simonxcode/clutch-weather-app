@@ -1,42 +1,43 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { changeLocation, selectLocation } from './locationSlice'
+import { /*useSelector*/ useDispatch } from 'react-redux'
+import { changeLocation /*selectLocation*/ } from './locationSlice'
 import PropTypes from 'prop-types'
-import axios from 'axios'
+// import axios from 'axios'
 
-const Form = () => {
-  const location = useSelector(selectLocation) //need to place somewhere else 
+const Form = ({ submitSearch }) => {
+  // const location = useSelector(selectLocation) //need to place somewhere else 
   const dispatch = useDispatch()
 
   const [assignedLocation, setAssignedLocation] = useState('')
-  const [apiData, setApiData] = useState({}); 
+  // const [apiData, setApiData] = useState({}); 
 
-  const apiKey = process.env.REACT_APP_API_KEY;
-  const apiCurrentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${assignedLocation}&appid=${apiKey}`;
+  // const apiKey = process.env.REACT_APP_API_KEY;
+  // const apiCurrentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${assignedLocation}&appid=${apiKey}`;
 
-  const getCoordinates = () => {
-    axios.get(apiCurrentUrl)
-    .then(res => res.data)
-    .then(data => {
-      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&&lon=${data.coord.lon}&appid=${apiKey}`)
-        .then((res) => {
-          console.log(res)
-          setApiData(res.data)
-        }).catch((err) => {
-          console.log(err)
-        })
-    })
-  }
+  // const getCoordinates = () => {
+  //   axios.get(apiCurrentUrl)
+  //   .then(res => res.data)
+  //   .then(data => {
+  //     axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&&lon=${data.coord.lon}&appid=${apiKey}`)
+  //       .then((res) => {
+  //         console.log(res)
+  //         setApiData(res.data)
+  //       }).catch((err) => {
+  //         console.log(err)
+  //       })
+  //   })
+  // }
 
   const handleSubmit = e => {
     e.preventDefault()
     if (!assignedLocation || assignedLocation === '') return 
-    getCoordinates()
+    submitSearch(assignedLocation)
+    // getCoordinates()
   }
 
-  const kelvinToFarenheit = k => {
-    return ((k - 273.15) * 1.8 + 32.0).toFixed(0);
-  };
+  // const kelvinToFarenheit = k => {
+  //   return ((k - 273.15) * 1.8 + 32.0).toFixed(0);
+  // };
     
   return (
     <div className="flex justify-center items-center p-4">
@@ -57,18 +58,20 @@ const Form = () => {
         </button>
       </form>
       <div className="p-2">
+        {/*
         {apiData.current ? (
           <p>{kelvinToFarenheit(apiData.current.temp)}°F</p>
           ) : (
           ""
         )}
+          */}
       </div>
     </div>
   );
 }
 
 Form.protoTypes = {
-  submitRequest: PropTypes.func.isRequired
+  submitSearch: PropTypes.func.isRequired
 }
 
 export default Form
