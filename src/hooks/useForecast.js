@@ -31,10 +31,12 @@ const useForecast = () => {
     setError(false)
 
     const response = await getCoordinates(location)
-    if(!response || response.lat || response.lon) return
+    const {lat, lon} = response.coord
+
+    if(!response || !lat || !lon) return
     console.log('getCoordinates', { response })
    
-    const data = await getForecastData(response.coord.lat, response.coord.lon)
+    const data = await getForecastData(lat, lon)
     if(!data) return
     console.log('getForecastData', { data })
   }
