@@ -29,8 +29,8 @@ const useForecast = () => {
   }
 
   const gatherForecastData = response => {
-    const currentDay = getCurrentDayForecast(response.name)
-
+    const { temp } = response.main
+    const currentDay = getCurrentDayForecast(response.name, response.dt, response.weather[0], temp)
     setForecast({ currentDay })
   }
 

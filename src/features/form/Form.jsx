@@ -34,11 +34,7 @@ const Form = ({ submitSearch }) => {
     submitSearch(assignedLocation)
     // getCoordinates()
   }
-
-  // const kelvinToFarenheit = k => {
-  //   return ((k - 273.15) * 1.8 + 32.0).toFixed(0);
-  // };
-    
+      
   return (
     <div className="flex justify-center items-center p-4">
       <form onSubmit={handleSubmit}>
