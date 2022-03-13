@@ -9,7 +9,7 @@ const getCurrentDayForecast = (name, dt, response, temp) => ({
   date: moment.unix(dt).format('MMMM Do'),
   location: name, 
   temperature: kelvinToFarenheit(temp),
-  // weatherIcon: `https://www.metaweather.com/static/img/weather/${data.weather_state_abbr}.svg`,
+  weatherIcon: `https://www.openweathermap.org/img/w/${response.icon}.png`,
   weatherDescription: response.main
 })
 

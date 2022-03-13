@@ -13,8 +13,8 @@ const CurrentDay = ({ weekday, date, location, temperature, weatherIcon, weather
       <p className="inline-block">{date}</p>
     </div>
     <div className="text-sky-900">
-      {/*<img src={weatherIcon} alt='weather icon' className="inline-block w-20 p-2" /> */}
-      <span className="text-5xl align-middle p-2">{temperature} °C</span>
+      <img src={weatherIcon} alt='weather icon' className="inline-block w-24 p-2" /> 
+      <span className="text-5xl align-middle p-2">{temperature} °F</span>
       <p className="block text-2xl p-2 font-light">{weatherDescription}</p>
     </div>
   </div>
@@ -24,7 +24,7 @@ CurrentDay.propTypes = {
   weekday: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  // weatherIcon: PropTypes.string.isRequired,
+  weatherIcon: PropTypes.string.isRequired,
   temperature: PropTypes.string.isRequired,
   weatherDescription: PropTypes.string.isRequired
 }
