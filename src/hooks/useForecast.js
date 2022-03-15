@@ -10,22 +10,27 @@ const useForecast = () => {
   const [isError, setError] = useState(false)
 
   const getCoordinates = async (location) => {
-    const { data } = await axios(`${BASE_URL}/weather`, { params: { q: location.value, appid: API_KEY } })
-    if(!data || data.length === 0) {
-      setError('There is no such location')
-      return
+    try {
+      const { data } = await axios(`${BASE_URL}/weather`, { params: { q: location.value, appid: API_KEY } })
+      return data
+    } catch(data) { 
+      if(!data.ok) {
+        setError('There is not such location')
+        return
+      }
     }
-    return data
   }
 
   const getForecastData = async (lat, lon) => {
-       const { data } = await axios(`${BASE_URL}/onecall`, {params: {lat: lat, lon: lon, appid: API_KEY } })
-
-       if(!data || data.length === 0) {
-         setError('Something went wrong')
-         return
-       }
-       return data
+    try {
+      const { data } = await axios(`${BASE_URL}/onecall`, {params: {lat: lat, lon: lon, appid: API_KEY } })
+      return data
+    } catch(data) {
+      if(!data.ok) {
+        setError('Something went wrong')
+        return
+      }
+    }   
   }
 
   const gatherForecastData = response => {
@@ -37,15 +42,13 @@ const useForecast = () => {
   const submitRequest  = async location => {
     setError(false)
 
-    const response = await getCoordinates(location)
-    const {lat, lon} = response.coord
-
-    if(!response || !lat || !lon) return
-    console.log('getCoordinates', { response })
+    const response = await getCoordinates(location) || {}
+    if(!response.coord ) return
    
+    const {lat, lon} = response.coord
     const data = await getForecastData(lat, lon)
+
     if(!data) return
-    console.log('getForecastData', { data })
 
     gatherForecastData(response)
   }
@@ -55,6 +58,7 @@ const useForecast = () => {
     forecast,
     submitRequest,
   }
+
 } 
 
 export default useForecast
