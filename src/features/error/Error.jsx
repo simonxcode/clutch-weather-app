@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Error = ({ message }) => (
-  <div>
+  <div className="flex justify-center item-center font-medium text-sky-900 pb-4">
     { message }
   </div>
 )
