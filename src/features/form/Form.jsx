@@ -2,31 +2,11 @@ import React, { useState } from 'react'
 import { /*useSelector*/ useDispatch } from 'react-redux'
 import { changeLocation /*selectLocation*/ } from './locationSlice'
 import PropTypes from 'prop-types'
-// import axios from 'axios'
 
 const Form = ({ submitSearch }) => {
   // const location = useSelector(selectLocation) //need to place somewhere else 
   const dispatch = useDispatch()
-
   const [assignedLocation, setAssignedLocation] = useState('')
-  // const [apiData, setApiData] = useState({}); 
-
-  // const apiKey = process.env.REACT_APP_API_KEY;
-  // const apiCurrentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${assignedLocation}&appid=${apiKey}`;
-
-  // const getCoordinates = () => {
-  //   axios.get(apiCurrentUrl)
-  //   .then(res => res.data)
-  //   .then(data => {
-  //     axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&&lon=${data.coord.lon}&appid=${apiKey}`)
-  //       .then((res) => {
-  //         console.log(res)
-  //         setApiData(res.data)
-  //       }).catch((err) => {
-  //         console.log(err)
-  //       })
-  //   })
-  // }
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -53,15 +33,6 @@ const Form = ({ submitSearch }) => {
           search
         </button>
       </form>
-      <div className="p-2">
-        {/*
-        {apiData.current ? (
-          <p>{kelvinToFarenheit(apiData.current.temp)}°F</p>
-          ) : (
-          ""
-        )}
-          */}
-      </div>
     </div>
   );
 }

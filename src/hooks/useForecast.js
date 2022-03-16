@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import getCurrentDayForecast from '../helpers/getCurrentDayForecast'
+import getCurrentDayDetailsItems from '../helpers/getCurrentDayDetailsItems'
 
 const BASE_URL = 'https://api.openweathermap.org/data/2.5'
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -36,7 +37,12 @@ const useForecast = () => {
   const gatherForecastData = response => {
     const { temp } = response.main
     const currentDay = getCurrentDayForecast(response.name, response.dt, response.weather[0], temp)
-    setForecast({ currentDay })
+    const { speed } = response.wind
+    const currentDayDetails = getCurrentDayDetailsItems(response.main, speed)
+    
+    //debug
+    console.log(speed)
+    setForecast({ currentDay, currentDayDetails })
   }
 
   const submitRequest  = async location => {
