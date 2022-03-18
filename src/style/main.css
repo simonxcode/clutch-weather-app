@@ -499,11 +499,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pl-1 {
   padding-left: 0.25rem;
 }
+.pb-4 {
+  padding-bottom: 1rem;
+}
 .pr-6 {
   padding-right: 1.5rem;
 }
-.pb-4 {
-  padding-bottom: 1rem;
+.pl-0 {
+  padding-left: 0px;
+}
+.pl-0\.5 {
+  padding-left: 0.125rem;
 }
 .text-center {
   text-align: center;
@@ -532,11 +538,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-normal {
   font-weight: 400;
 }
-.font-bold {
-  font-weight: 700;
-}
 .font-medium {
   font-weight: 500;
+}
+.font-bold {
+  font-weight: 700;
 }
 .text-sky-900 {
   --tw-text-opacity: 1;

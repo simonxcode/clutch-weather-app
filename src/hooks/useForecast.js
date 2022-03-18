@@ -38,10 +38,11 @@ const useForecast = () => {
     const { temp } = response.main
     const currentDay = getCurrentDayForecast(response.name, response.dt, response.weather[0], temp)
     const { speed } = response.wind
-    const currentDayDetails = getCurrentDayDetailsItems(response.main, speed)
+    const { deg } = response.wind
+    const { sunrise } = response.sys
+    const { sunset } = response.sys
+    const currentDayDetails = getCurrentDayDetailsItems(response.main, speed, deg, sunrise, sunset)
     
-    //debug
-    console.log(speed)
     setForecast({ currentDay, currentDayDetails })
   }
 
