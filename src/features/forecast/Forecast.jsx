@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import CurrentDay from '../CurrentDay'
 import CurrentDayDetails from '../CurrentDayDetails'
-// import UpcomingDays from '../UpcomingDays'
+import UpcomingDays from '../UpcomingDays'
 
 const Forecast = ({ forecast }) => (
   <div className="flex justify-center items-center p-4">
@@ -10,7 +10,7 @@ const Forecast = ({ forecast }) => (
       <CurrentDay className="col-span-1"{...forecast.currentDay} />
       <div className="col-span-2" >
       <CurrentDayDetails forecast={forecast.currentDayDetails} />
-        {/* <UpcomingDays days={forecast.upcomingDays} /> */} 
+      <UpcomingDays days={forecast.upcomingDays} />
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@ Forecast.propTypes = {
   forecast: PropTypes.shape({
     currentDay: PropTypes.object,
     currentDayDetails: PropTypes.array, 
-    // upcomingDays: PropTypes.array 
+    upcomingDays: PropTypes.array 
   })
 }
 
