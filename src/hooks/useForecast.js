@@ -46,7 +46,6 @@ const useForecast = () => {
     const currentDayDetails = getCurrentDayDetailsItems(response.main, speed, deg, sunrise, sunset)
     
     const upcomingDays = getUpcomingDays(data.daily)
-    console.log('upcoming days', data)
 
     setForecast({ currentDay, currentDayDetails, upcomingDays })
   }
