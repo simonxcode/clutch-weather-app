@@ -8,6 +8,7 @@
     "cra-template": "1.0.3",
     "init": "^0.1.2",
     "moment": "^2.29.1",
+    "moment-timezone": "^0.5.34",
     "postcss-cli": "^9.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

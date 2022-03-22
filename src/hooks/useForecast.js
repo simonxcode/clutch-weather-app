@@ -43,7 +43,7 @@ const useForecast = () => {
     const { deg } = response.wind
     const { sunrise } = response.sys
     const { sunset } = response.sys
-    const currentDayDetails = getCurrentDayDetailsItems(response.main, speed, deg, sunrise, sunset)
+    const currentDayDetails = getCurrentDayDetailsItems(response.main, speed, deg, sunrise, sunset, data)
     
     const upcomingDays = getUpcomingDays(data.daily)
 
