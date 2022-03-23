@@ -20,6 +20,7 @@ const Page = () => {
       <Loader />
       {isError && <Error message={ isError } />}
       {forecast && <Forecast forecast={ forecast } />}
+    
     </div>
   ) 
 }
