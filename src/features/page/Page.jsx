@@ -7,7 +7,7 @@ import Forecast from '../Forecast'
 import useForecast  from '../../hooks/useForecast'
 
 const Page = () => {
-  const { isError, forecast, submitRequest } = useForecast()
+  const { isLoading, isError, forecast, submitRequest } = useForecast()
 
   const onSubmit = value => {
     submitRequest({ value })  
@@ -16,8 +16,8 @@ const Page = () => {
   return (
     <div>
       <Header />
-      <Form submitSearch={ onSubmit } />
-      <Loader />
+      <Form submitSearch={onSubmit} />
+      {isLoading && <Loader />}
       {isError && <Error message={ isError } />}
       {forecast && <Forecast forecast={ forecast } />}
     

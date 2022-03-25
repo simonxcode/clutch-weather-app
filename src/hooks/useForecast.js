@@ -8,8 +8,9 @@ const BASE_URL = 'https://api.openweathermap.org/data/2.5'
 const API_KEY = process.env.REACT_APP_API_KEY
 
 const useForecast = () => {
-  const [forecast, setForecast] = useState(null)
+  const [isLoading, setLoading] = useState(false)
   const [isError, setError] = useState(false)
+  const [forecast, setForecast] = useState(null)
 
   const getCoordinates = async (location) => {
     try {
@@ -18,6 +19,7 @@ const useForecast = () => {
     } catch(data) { 
       if(!data.ok) {
         setError('There is not such location')
+        setLoading(false)
         return
       }
     }
@@ -30,6 +32,7 @@ const useForecast = () => {
     } catch(data) {
       if(!data.ok) {
         setError('Something went wrong')
+        setLoading(false)
         return
       }
     }   
@@ -48,9 +51,11 @@ const useForecast = () => {
     const upcomingDays = getUpcomingDays(data.daily)
 
     setForecast({ currentDay, currentDayDetails, upcomingDays })
+    setLoading(false)
   }
 
   const submitRequest  = async location => {
+    setLoading(true)
     setError(false)
 
     const response = await getCoordinates(location) || {}
@@ -65,6 +70,7 @@ const useForecast = () => {
   }
  
   return {
+    isLoading,
     isError,
     forecast,
     submitRequest,
