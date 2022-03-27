@@ -40,7 +40,8 @@ const useForecast = () => {
 
   const gatherForecastData = (response, data) => {
     const { temp } = response.main
-    const currentDay = getCurrentDayForecast(response.name, response.dt, response.weather[0], temp)
+    const { dt } = data.current
+    const currentDay = getCurrentDayForecast(response.name, dt, data, response.weather[0], temp)
 
     const { speed } = response.wind
     const { deg } = response.wind
