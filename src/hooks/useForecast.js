@@ -49,7 +49,9 @@ const useForecast = () => {
     const { sunset } = response.sys
     const currentDayDetails = getCurrentDayDetailsItems(response.main, speed, deg, sunrise, sunset, data)
     
-    const upcomingDays = getUpcomingDays(data.daily)
+    const {timezone } = data
+    const upcomingDays = getUpcomingDays(data.daily, timezone)
+   
 
     setForecast({ currentDay, currentDayDetails, upcomingDays })
     setLoading(false)

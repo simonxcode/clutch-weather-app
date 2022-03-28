@@ -13,10 +13,10 @@ const getWeatherIcon = day => {
   return `https://www.openweathermap.org/img/w/${icon}.png`
 }
 
-const getUpcomingDays = data => 
+const getUpcomingDays = (data, timezone) => 
   data.slice(1, 6).map(day => ({
     weatherIcon: getWeatherIcon(day),
-    weekday: moment.unix(day.dt).format('ddd'),
+    weekday: moment.unix(day.dt).tz(timezone).format('ddd'),
     highTemp: getHighTemp(day),
     lowTemp: getLowTemp(day)
   }))
