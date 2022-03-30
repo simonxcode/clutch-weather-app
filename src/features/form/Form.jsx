@@ -17,9 +17,10 @@ const Form = ({ submitSearch }) => {
       
   return (
     <div className="flex justify-center items-center p-4">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="xs:flex flex-col item-center justify-center sm:inline">
         <input 
-          type='text' 
+          autoFocus={true}  
+          type='text'     
           name='location' 
           placeholder='city' 
           value={assignedLocation} 
@@ -28,7 +29,7 @@ const Form = ({ submitSearch }) => {
         />
         <button 
           onClick={() => dispatch(changeLocation(assignedLocation))} 
-          className="px-4 text-sky-900 rounded-md bg-sky-200 border-solid border-b-4 border-slate-300"
+          className="text-sky-900 rounded-md bg-sky-200 border-solid border-b-4 border-slate-300 px-4 xs:m-2"
         >
           search
         </button>

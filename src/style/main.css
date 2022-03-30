@@ -490,6 +490,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .inline-block {
   display: inline-block;
 }
+.inline {
+  display: inline;
+}
 .flex {
   display: flex;
 }
@@ -519,6 +522,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-10 {
   width: 2.5rem;
+}
+.w-full {
+  width: 100%;
+}
+.w-9 {
+  width: 2.25rem;
+}
+.w-9\/12 {
+  width: 75%;
+}
+.w-max {
+  width: max-content;
+}
+.flex-1 {
+  flex: 1 1 0%;
 }
 @keyframes bounce {
 
@@ -568,8 +586,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.flex-col {
+  flex-direction: column;
+}
 .place-content-center {
   place-content: center;
+}
+.place-items-center {
+  place-items: center;
 }
 .content-center {
   align-content: center;
@@ -633,6 +657,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-sky-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(12 74 110 / var(--tw-bg-opacity));
+}
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 .bg-gradient-radial {
   background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
@@ -745,6 +773,15 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin: -0.5rem;
   }
 
+  .xs\:m-2 {
+    margin: 0.5rem;
+  }
+
+  .xs\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .xs\:mr-2 {
     margin-right: 0.5rem;
   }
@@ -785,8 +822,37 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: flex;
   }
 
+  .xs\:h-screen {
+    height: 100vh;
+  }
+
+  .xs\:w-9\/12 {
+    width: 75%;
+  }
+
+  .xs\:w-9 {
+    width: 2.25rem;
+  }
+
+  .xs\:w-max {
+    width: max-content;
+  }
+
+  .xs\:place-items-center {
+    place-items: center;
+  }
+
   .xs\:justify-center {
     justify-content: center;
+  }
+
+  .xs\:justify-items-center {
+    justify-items: center;
+  }
+
+  .xs\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .xs\:pb-2 {
@@ -801,6 +867,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 1rem;
   }
 
+  .xs\:pl-1 {
+    padding-left: 0.25rem;
+  }
+
   .xs\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -812,12 +882,49 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin: 0.5rem;
   }
 
+  .sm\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .sm\:inline {
+    display: inline;
+  }
+
   .sm\:flex {
     display: flex;
   }
 
+  .sm\:w-0 {
+    width: 0px;
+  }
+
+  .sm\:w-auto {
+    width: auto;
+  }
+
+  .sm\:w-9 {
+    width: 2.25rem;
+  }
+
+  .sm\:w-9\/12 {
+    width: 75%;
+  }
+
+  .sm\:w-max {
+    width: max-content;
+  }
+
+  .sm\:place-items-center {
+    place-items: center;
+  }
+
   .sm\:content-center {
     align-content: center;
+  }
+
+  .sm\:pl-1 {
+    padding-left: 0.25rem;
   }
 }
 @media (min-width: 768px) {
@@ -836,6 +943,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:block {
     display: block;
+  }
+
+  .md\:inline {
+    display: inline;
   }
 
   .md\:flex {
@@ -857,6 +968,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:pr-2 {
     padding-right: 0.5rem;
   }
+
+  .md\:pl-1 {
+    padding-left: 0.25rem;
+  }
 }
 @media (min-width: 0) {
 
@@ -869,8 +984,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   @media (min-width: 768px) {
 
+    .xs\:md\:inline {
+      display: inline;
+    }
+  }
+
+  @media (min-width: 768px) {
+
     .xs\:md\:pt-2 {
       padding-top: 0.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .xs\:md\:pl-1 {
+      padding-left: 0.25rem;
     }
   }
 }
