@@ -11,7 +11,7 @@ const getCurrentDayForecast = (name, dt, data, response, temp, country) => ({
   country: country,
   temperature: getFarenheit(temp),
   weatherIcon: `https://www.openweathermap.org/img/w/${response.icon}.png`,
-  weatherDescription: response.main
+  weatherDescription: response.main.toLowerCase()
 })
 
 export default getCurrentDayForecast
