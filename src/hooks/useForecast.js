@@ -39,9 +39,10 @@ const useForecast = () => {
   }
 
   const gatherForecastData = (response, data) => {
-    const { temp } = response.main
     const { dt } = data.current
-    const currentDay = getCurrentDayForecast(response.name, dt, data, response.weather[0], temp)
+    const { temp } = response.main
+    const { country } = response.sys
+    const currentDay = getCurrentDayForecast(response.name, dt, data, response.weather[0], temp, country)
 
     const { speed } = response.wind
     const { deg } = response.wind

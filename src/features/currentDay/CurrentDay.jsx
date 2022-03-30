@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import locationIcon from './assets/maps-and-flags.png'
 
-const CurrentDay = ({ weekday, date, location, temperature, weatherIcon, weatherDescription }) => (
+const CurrentDay = ({ weekday, date, location, country, temperature, weatherIcon, weatherDescription }) => (
   <div className="m-2 bg-slate-50">
     <div className="pt-2 pr-2 pl-2">
       <img src={locationIcon} alt='location pin icon' className="inline-block w-5 mr-1 mb-2" />
-      <span className="text-2xl pr-2 text-sky-900 font-semibold">{location}</span>
+      <span className="text-2xl pr-1 text-sky-900 font-semibold">{location},</span>
+      <span className="text-2xl text-sky-900 font-semibold">{country}</span>
     </div>
     <div className="pr-2 pl-2 pb-2 text-sky-900">
       <p className="inline-block pr-1">{weekday},</p>
@@ -24,6 +25,7 @@ CurrentDay.propTypes = {
   weekday: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
   weatherIcon: PropTypes.string.isRequired,
   temperature: PropTypes.string.isRequired,
   weatherDescription: PropTypes.string.isRequired
