@@ -1,6 +1,6 @@
 import moment from 'moment' 
 
-const getFarenheit = temp => {
+const kelvinToFarenheit = temp => {
   return ((temp - 273.15) * 1.8 + 32.0).toFixed(0); 
 };
 
@@ -9,7 +9,7 @@ const getCurrentDayForecast = (name, dt, data, response, temp, country) => ({
   date: moment.unix(dt).tz(data.timezone).format('MMMM Do'),
   location: name, 
   country: country,
-  temperature: getFarenheit(temp),
+  temperature: kelvinToFarenheit(temp),
   weatherIcon: `https://www.openweathermap.org/img/w/${response.icon}.png`,
   weatherDescription: response.main.toLowerCase()
 })

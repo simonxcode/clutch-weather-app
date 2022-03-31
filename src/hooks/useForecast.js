@@ -12,7 +12,7 @@ const useForecast = () => {
   const [isError, setError] = useState(false)
   const [forecast, setForecast] = useState(null)
 
-  const getCoordinates = async (location) => {
+  const getCoordinates = async location => {
     try {
       const { data } = await axios(`${BASE_URL}/weather`, { params: { q: location.value, appid: API_KEY } })
       return data
@@ -27,7 +27,7 @@ const useForecast = () => {
 
   const getForecastData = async (lat, lon) => {
     try {
-      const { data } = await axios(`${BASE_URL}/onecall`, {params: {lat: lat, lon: lon, appid: API_KEY } })
+      const { data } = await axios(`${BASE_URL}/onecall`, {params: { lat: lat, lon: lon, appid: API_KEY } })
       return data
     } catch(data) {
       if(!data.ok) {
@@ -79,7 +79,6 @@ const useForecast = () => {
     forecast,
     submitRequest,
   }
-
 } 
 
 export default useForecast

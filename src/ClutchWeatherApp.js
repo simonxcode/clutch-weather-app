@@ -25,4 +25,3 @@ const ClutchWeatherApp = () => {
 }
 
 export default ClutchWeatherApp
-

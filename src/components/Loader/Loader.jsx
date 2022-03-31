@@ -10,7 +10,6 @@ const Loader = () => {
       <div className={`${roundLoader} animate-bounceThree`}></div>
     </div>
   )
-
 }
 
 export default Loader

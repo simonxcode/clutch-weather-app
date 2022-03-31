@@ -22,3 +22,4 @@ const getUpcomingDays = (data, timezone) =>
   }))
 
   export default getUpcomingDays
+  

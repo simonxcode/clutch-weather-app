@@ -5,10 +5,10 @@ import UpcomingDaysDetails from '../UpcomingDaysDetails'
 const UpcomingDays = ({ days }) => (
   <div className="m-2 bg-slate-50 md:ml-0">
     <ul className="flex">
-        {days.map(day => (
-          <UpcomingDaysDetails {...day} key={day.weekday} />
-        ))}
-      </ul>
+      {days.map(day => (
+        <UpcomingDaysDetails {...day} key={day.weekday} />
+      ))}
+    </ul>
     </div>
   )
 
