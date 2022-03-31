@@ -113,7 +113,9 @@ module.exports = {
       spin: 'spin 1s linear infinite',
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-      bounce: 'bounce 1s infinite',
+      bounce: 'bounce .5s infinite 100ms',
+      bounceTwo: 'bounce .5s infinite 150ms',
+      bounceThree: 'bounce .5s infinite 200ms',
     },
     aspectRatio: {
       auto: 'auto',
@@ -572,7 +574,7 @@ module.exports = {
       },
       bounce: {
         '0%, 100%': {
-          transform: 'translateY(-25%)',
+          transform: 'translateY(-75%)',
           animationTimingFunction: 'cubic-bezier(0.8,0,1,1)',
         },
         '50%': {

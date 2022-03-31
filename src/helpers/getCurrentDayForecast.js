@@ -1,12 +1,17 @@
 import moment from 'moment' 
 
-const getCurrentDayForecast = (data, title) => ({
-  weekday: moment(data.applicable_date).format('ddd'),
-  date: moment(data.applicable_date).format('MMMM Do'),
-  location: title, 
-  temperature: Math.round(data.the_temp),
-  weatherIcon: `https://www.metaweather.com/static/img/weather/${data.weather_state_abbr}.svg`,
-  weatherDescription: data.weather_state_name
+const kelvinToFahrenheit = temp => {
+  return ((temp - 273.15) * 1.8 + 32.0).toFixed(0); 
+};
+
+const getCurrentDayForecast = (name, dt, data, response, temp, country) => ({
+  weekday: moment.unix(dt).tz(data.timezone).format('ddd'),
+  date: moment.unix(dt).tz(data.timezone).format('MMMM Do'),
+  location: name, 
+  country: country,
+  temperature: kelvinToFahrenheit(temp),
+  weatherIcon: `https://www.openweathermap.org/img/w/${response.icon}.png`,
+  weatherDescription: response.main.toLowerCase()
 })
 
 export default getCurrentDayForecast

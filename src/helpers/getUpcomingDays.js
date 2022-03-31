@@ -1,13 +1,25 @@
 import moment from 'moment'
 
-const getWeekday = date => moment(date).format('dddd').substring(0, 3)
+const getHighTemp = day => {
+  return ((day.temp.max - 273.15) * 1.8 + 32.0).toFixed(0);
+};
 
-const getUpcomingDays = data => 
-  data.slice(1).map(day => ({
-    iconURL: day.weather_state_abbr,
-    weekday: getWeekday(day.applicable_date),
-    highTemp: Math.round(day.max_temp),
-    lowTemp: Math.round(day.min_temp)
+const getLowTemp = day => {
+  return ((day.temp.min - 273.15) * 1.8 + 32.0).toFixed(0);
+};
+
+const getWeatherIcon = day => {
+  const icon = day.weather[0].icon
+  return `https://www.openweathermap.org/img/w/${icon}.png`
+}
+
+const getUpcomingDays = (data, timezone) => 
+  data.slice(1, 6).map(day => ({
+    weatherIcon: getWeatherIcon(day),
+    weekday: moment.unix(day.dt).tz(timezone).format('ddd'),
+    highTemp: getHighTemp(day),
+    lowTemp: getLowTemp(day)
   }))
 
   export default getUpcomingDays
+  

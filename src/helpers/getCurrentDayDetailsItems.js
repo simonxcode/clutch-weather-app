@@ -1,36 +1,58 @@
-const getCurrentDayDetailsItems = (data, sun_rise, sun_set) => [
+import moment from 'moment'
+import 'moment-timezone'
+
+const mpsToMph = speed => {
+  return  (speed * 2.23).toFixed(1)
+} 
+
+const degreeToCompass  = deg => {
+  const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
+  return directions[Math.round(deg/45) % 8]
+}
+
+const compassToArrow = deg => {
+  const arrows = ['↑', '↗', '→', '↘', '↓', '↙', '←', '↖']
+  return arrows[Math.round(deg / 45) % 8]
+}
+
+const kelvinToFahrenheit = temp => {
+  return ((temp - 273.15) * 1.8 + 32.0).toFixed(0)
+}
+
+const getCurrentDayDetailsItems = (response, speed, deg, sunrise, sunset, data) => [
   {
     name: 'humidity',
-    value: data.humidity,
+    value: response.humidity,
     unit: '%'
   }, 
   {
     name: 'wind',
-    value: Math.round(data.wind_speed),
+    value: mpsToMph(speed),
     unit: 'mph'
   },
   {
     name: 'wind direction',
-    value: data.wind_direction_compass,
+    value: degreeToCompass(deg),
+    unit: compassToArrow(deg)
   },
   {
     name: 'high',
-    value: Math.round(data.max_temp),
-    unit: '°C'
+    value: kelvinToFahrenheit(response.temp_max),
+    unit: '°F'
   },
   {
     name: 'low',
-    value: Math.round(data.min_temp),
-    unit: '°C'
+    value: kelvinToFahrenheit(response.temp_min),
+    unit: '°F'
   },
   {
-    name: 'sun rise',
-    value: sun_rise,
+    name: 'sunrise',
+    value: moment.unix(sunrise).tz(data.timezone).format('h:mm'),
     unit: 'am'
   },
   {
-    name: 'sun set',
-    value: sun_set,
+    name: 'sunset',
+    value: moment.unix(sunset).tz(data.timezone).format('h:mm'),
     unit: 'pm'
   }
 ]
