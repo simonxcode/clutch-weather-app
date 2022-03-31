@@ -18,7 +18,7 @@ const useForecast = () => {
       return data
     } catch(data) { 
       if(!data.ok) {
-        setError('There is not such location')
+        setError('unable to find location')
         setLoading(false)
         return
       }
@@ -31,7 +31,7 @@ const useForecast = () => {
       return data
     } catch(data) {
       if(!data.ok) {
-        setError('Something went wrong')
+        setError('something went wrong')
         setLoading(false)
         return
       }

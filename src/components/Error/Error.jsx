@@ -12,8 +12,7 @@ Error.propTypes = {
 }
 
 Error.defaultProps = {
-  message: 'An error occurred'
+  message: 'an error occurred'
 }
 
 export default Error
-

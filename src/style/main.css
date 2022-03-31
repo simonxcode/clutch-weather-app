@@ -412,6 +412,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-2 {
+  margin-top: 0.5rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -423,6 +426,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-4 {
   height: 1rem;
+}
+.h-2 {
+  height: 0.5rem;
 }
 .w-5 {
   width: 1.25rem;
@@ -633,6 +639,51 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
   filter: var(--tw-filter);
 }
+@keyframes bounce {
+
+  0%, 100% {
+    transform: translateY(-75%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+.placeholder\:animate-bounce::placeholder {
+  animation: bounce .5s infinite 100ms;
+}
+@keyframes bounce {
+
+  0%, 100% {
+    transform: translateY(-75%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+.placeholder\:animate-bounceTwo::placeholder {
+  animation: bounce .5s infinite 150ms;
+}
+@keyframes bounce {
+
+  0%, 100% {
+    transform: translateY(-75%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+.placeholder\:animate-bounceThree::placeholder {
+  animation: bounce .5s infinite 200ms;
+}
 @media (min-width: 0) {
 
   .xs\:-m-2 {
@@ -666,6 +717,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   .xs\:h-4 {
     height: 1rem;
   }
+
+  .xs\:w-4 {
+    width: 1rem;
+  }
+
+  .xs\:w-2 {
+    width: 0.5rem;
+  }
+
+  .xs\:bg-red-900 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+  }
+
+  .xs\:bg-red-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+  }
 }
 @media (min-width: 640px) {
 
@@ -679,6 +748,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:h-4 {
     height: 1rem;
+  }
+
+  .sm\:h-1 {
+    height: 0.25rem;
+  }
+
+  .sm\:h-2 {
+    height: 0.5rem;
+  }
+
+  .sm\:w-4 {
+    width: 1rem;
   }
 }
 @media (min-width: 768px) {
@@ -705,6 +786,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:h-4 {
     height: 1rem;
+  }
+
+  .md\:w-4 {
+    width: 1rem;
   }
 
   .md\:pt-2 {

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import locationIcon from './assets/maps-and-flags.png'
+import locationIcon from '../../assets/location-pin.png'
 
 const CurrentDay = ({ weekday, date, location, country, temperature, weatherIcon, weatherDescription }) => (
   <div className="m-2 bg-slate-50">
-    <div className="xs:flex justify-center md:block mb-2 ml-2 pt-2 pr-2 pl-2">
+    <div className="xs:flex justify-center md:block mb-2 pt-2 pr-2 pl-2">
       <img src={locationIcon} alt='location pin icon' className="inline-block w-5 xs:mt-1.5 md:mt-0 mr-1 mb-2" />
       <span className="text-2xl pr-1 text-sky-900 font-semibold">{location},</span>
       <span className="text-2xl text-sky-900 font-semibold">{country}</span>
