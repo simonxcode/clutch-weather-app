@@ -15,7 +15,7 @@ const compassToArrow = deg => {
   return arrows[Math.round(deg / 45) % 8]
 }
 
-const kelvinToFarenheit = temp => {
+const kelvinToFahrenheit = temp => {
   return ((temp - 273.15) * 1.8 + 32.0).toFixed(0)
 }
 
@@ -37,12 +37,12 @@ const getCurrentDayDetailsItems = (response, speed, deg, sunrise, sunset, data) 
   },
   {
     name: 'high',
-    value: kelvinToFarenheit(response.temp_max),
+    value: kelvinToFahrenheit(response.temp_max),
     unit: '°F'
   },
   {
     name: 'low',
-    value: kelvinToFarenheit(response.temp_min),
+    value: kelvinToFahrenheit(response.temp_min),
     unit: '°F'
   },
   {
