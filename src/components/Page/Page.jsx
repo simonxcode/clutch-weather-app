@@ -1,28 +1,27 @@
-import React from 'react'
-import Header from '../Header'
-import Form from '../Form'
-import Loader from '../Loader'
-import Error from '../Error'
-import Forecast from '../Forecast'
-import useForecast  from '../../hooks/useForecast'
+// import React from 'react'
+// import Header from '../Header'
+// import Form from '../Form'
+// import Loader from '../Loader'
+// import Error from '../Error'
+// import Forecast from '../Forecast'
+// import useForecast  from '../../hooks/useForecast'
 
-const Page = () => {
-  const { isLoading, isError, forecast, submitRequest } = useForecast()
+// const Page = () => {
+//   const { isLoading, isError, forecast, submitRequest } = useForecast()
 
-  const onSubmit = value => {
-    submitRequest({ value })  
-  }
+//   const onSubmit = value => {
+//     submitRequest({ value })  
+//   }
 
-  return (
-    <div>
-      <Header />
-      <Form submitSearch={onSubmit} />
-      {isLoading && <Loader />}
-      {isError && <Error message={ isError } />}
-      {forecast && <Forecast forecast={ forecast } />}
-    
-    </div>
-  ) 
-}
+//   return (
+//     <div>
+//       <Header />
+//       <Form submitSearch={onSubmit} />
+//       {isLoading && <Loader />}
+//       {isError && <Error message={ isError } />}
+//       {forecast && <Forecast forecast={ forecast } />}
+//     </div>
+//   ) 
+// }
 
-export default Page
+// export default Page
