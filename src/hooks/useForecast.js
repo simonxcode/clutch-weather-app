@@ -13,8 +13,10 @@ const useForecast = () => {
   const [forecast, setForecast] = useState(null)
 
   const getCoordinates = async location => {
+    const url = `/api?q=${location.value}`
+    
     try {
-      const { data } = await axios(`${BASE_URL}/weather`, { params: { q: location.value, appid: API_KEY } })
+      const { data } =await axios(url)
       return data
     } catch(data) { 
       if(!data.ok) {

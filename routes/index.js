@@ -12,12 +12,11 @@ const API_KEY = process.env.REACT_APP_API_KEY
 //Init cache
 let cache = apicache.middleware
 
-router.get('/', cache('2 minutes'), async (req, res) => { 
+router.get('/', cache('2 minutes'), async (req, res, next) => { 
   try {
     const params = new URLSearchParams({
       ...url.parse(req.url, true).query,
       [KEY_NAME]: API_KEY
-
     })
 
     const apiRes = await needle('get', `${BASE_URL}?${params}`)
@@ -30,7 +29,7 @@ router.get('/', cache('2 minutes'), async (req, res) => {
 
     res.status(200).json(data)
   } catch(error) {
-    res.status(500).json({ error })
+    next(error)
   }
 })
 
