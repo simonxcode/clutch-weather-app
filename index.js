@@ -23,7 +23,8 @@ app.use(cors())
 app.use(express.static('build'))
 
 // Routes
-app.use('/api', require('./routes'))
+app.use('/weather', require('./routes/weather'))
+app.use('/onecall', require('./routes/onecall'))
 
 // Error handler middleware
 app.use(errorHandler)

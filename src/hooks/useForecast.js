@@ -4,19 +4,16 @@ import getCurrentDayForecast from '../helpers/getCurrentDayForecast'
 import getCurrentDayDetailsItems from '../helpers/getCurrentDayDetailsItems'
 import getUpcomingDays from '../helpers/getUpcomingDays'
 
-const BASE_URL = 'https://api.openweathermap.org/data/2.5'
-const API_KEY = process.env.REACT_APP_API_KEY
-
 const useForecast = () => {
   const [isLoading, setLoading] = useState(false)
   const [isError, setError] = useState(false)
   const [forecast, setForecast] = useState(null)
 
-  const getCoordinates = async location => {
-    const url = `/api?q=${location.value}`
-    
+  const getCoordinates = async location => {   
+    const url = `/weather?q=${location.value}`
+
     try {
-      const { data } =await axios(url)
+      const { data } = await axios(url)
       return data
     } catch(data) { 
       if(!data.ok) {
@@ -28,8 +25,10 @@ const useForecast = () => {
   }
 
   const getForecastData = async (lat, lon) => {
+    const url = `/onecall?lat=${lat}&lon=${lon}`
+
     try {
-      const { data } = await axios(`${BASE_URL}/onecall`, {params: { lat: lat, lon: lon, appid: API_KEY } })
+      const { data } = await axios(url)
       return data
     } catch(data) {
       if(!data.ok) {
@@ -40,7 +39,7 @@ const useForecast = () => {
     }   
   }
 
-  const gatherForecastData = (response, data) => {
+  const gatherForecastData = async (response, data) => {
     const { dt } = data.current
     const { temp } = response.main
     const { country } = response.sys
@@ -55,7 +54,6 @@ const useForecast = () => {
     const {timezone } = data
     const upcomingDays = getUpcomingDays(data.daily, timezone)
    
-
     setForecast({ currentDay, currentDayDetails, upcomingDays })
     setLoading(false)
   }
@@ -69,7 +67,6 @@ const useForecast = () => {
    
     const {lat, lon} = response.coord
     const data = await getForecastData(lat, lon)
-
     if(!data) return
 
     gatherForecastData(response, data)
