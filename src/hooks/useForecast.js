@@ -10,34 +10,28 @@ const useForecast = () => {
   const [forecast, setForecast] = useState(null)
 
   const getCoordinates = async location => {   
-    const url = `/weather?q=${location.value}`
+    const { data } = await axios(`/weather?q=${location.value}`)
 
-    try {
-      const { data } = await axios(url)
-      return data
-    } catch(data) { 
-      if(!data.ok) {
-        setError('unable to find location')
-        setLoading(false)
-        return
-      }
+    if(data.cod === '404' || !data) {
+      setError(data.message)
+      setLoading(false)
+      return
     }
+
+    return data
   }
 
   const getForecastData = async (lat, lon) => {
-    const url = `/onecall?lat=${lat}&lon=${lon}`
+    const { data } = await axios(`/onecall?lat=${lat}&lon=${lon}`)
 
-    try {
-      const { data } = await axios(url)
-      return data
-    } catch(data) {
-      if(!data.ok) {
-        setError('something went wrong')
-        setLoading(false)
-        return
-      }
-    }   
-  }
+    if(data.cod === '400' || !data) {
+      setError('something went wrong')
+      setLoading(false)
+      return
+    }
+
+    return data
+  }   
 
   const gatherForecastData = async (response, data) => {
     const { dt } = data.current
@@ -53,7 +47,7 @@ const useForecast = () => {
     
     const {timezone } = data
     const upcomingDays = getUpcomingDays(data.daily, timezone)
-   
+    
     setForecast({ currentDay, currentDayDetails, upcomingDays })
     setLoading(false)
   }
