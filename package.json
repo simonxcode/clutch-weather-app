@@ -2,6 +2,7 @@
   "name": "clutch-weather-app",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
     "axios": "^0.24.0",
     "cors": "^2.8.5",
