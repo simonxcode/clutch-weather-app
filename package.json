@@ -20,7 +20,7 @@
     "tailwindcss-cli": "^0.1.2"
   },
   "scripts": {
-    "start:server": "node index",
+    "start": "node index.js",
     "start:client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
