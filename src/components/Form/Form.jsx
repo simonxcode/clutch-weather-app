@@ -8,6 +8,7 @@ const Form = ({ submitSearch }) => {
     e.preventDefault()
     if (!assignedLocation || assignedLocation === '') return 
     submitSearch(assignedLocation)
+    setAssignedLocation('')
   }
       
   return (
