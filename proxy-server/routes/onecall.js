@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
     const data = apiRes.body
 
     res.status(200).json(data)
-  } catch (error) {
+  } catch(error) {
     next(error)
   }
 })
