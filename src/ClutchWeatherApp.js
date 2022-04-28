@@ -14,8 +14,8 @@ const ClutchWeatherApp = () => {
   }
 
   return (
-    <div>
-      <Header />
+    <div id="homepage">
+      <Header/>
       <Form submitSearch={onSubmit} />
       {isLoading && <Loader />}
       {isError && <Error message={ isError } />}
