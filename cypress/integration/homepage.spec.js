@@ -21,6 +21,21 @@ describe('Clutch Weather App', () => {
     cy.get('#form-input').type('atlanta');
     cy.get('#form-button').click();
   })
+
+  //verify onecall response
+  it('should verify correct request and response', () => {
+    cy.intercept({
+      method: 'GET',
+      path: '**/onecall?lat=33.749&lon=-84.388'
+    }).as('oneCallResponse')
+
+    cy.wait('@oneCallResponse')
+    cy.get('@oneCallResponse').then(xhr => {
+      console.log('xhr response', xhr)
+      expect(xhr.response.statusCode).to.eq(200)
+    })
+  })
+
   //forecast 
   it('should render Forecast component', () => {
     cy.get('#forecast-container').should('exist')
