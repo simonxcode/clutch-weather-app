@@ -1,6 +1,6 @@
 describe('Clutch Weather App', () => {
   
-  it('should render home page content', () => {
+  it('should render home page', () => {
     cy.visit('/')
     cy.get('#homepage').should('exist')
   })
@@ -22,8 +22,8 @@ describe('Clutch Weather App', () => {
     cy.get('#form-button').click();
   })
 
-  //verify onecall response
-  it('should verify correct request and response', () => {
+
+  it('should make API request and receive success response', () => {
     cy.intercept({
       method: 'GET',
       path: '**/onecall?lat=33.749&lon=-84.388'
@@ -36,22 +36,19 @@ describe('Clutch Weather App', () => {
     })
   })
 
-  //forecast 
-  it('should render Forecast component', () => {
+  it('should render Forecast component content', () => {
     cy.get('#forecast-container').should('exist')
   })
-  //current day 
-  it('should render CurrentDay component', () => {
+
+  it('should render CurrentDay component content', () => {
     cy.get('#currentday-container').should('exist')
   })
 
-  //current day details
-  it('should render CurrentDayDetails component', () => {
+  it('should render CurrentDayDetails component content', () => {
     cy.get('#currentday-details-container').should('exist')
   })
 
-  //upcoming days 
-  it('should render UpcomingDays component', () => {
+  it('should render UpcomingDays component content', () => {
     cy.get('#upcomingdays-details-container').should('exist')
   })
 })
