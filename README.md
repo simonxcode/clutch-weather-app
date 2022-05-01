@@ -1,5 +1,9 @@
-# Clutch Weather App
-A weather app that you can depend on when you need it most. Search any city in the world and retrieve current weather details.    
+# Clutch Weather App  
+
+[![Clutch Weather App](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/uxccqc&style=plastic&logo=cypress)](https://dashboard.cypress.io/projects/uxccqc/runs)  
+
+A weather app that you can depend on when you need it most. Search any city in the world and retrieve current weather details.  
+
 ![screen shot](public/assets/screenshot.jpg)
 
 ## Installation
