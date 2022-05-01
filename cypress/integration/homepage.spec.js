@@ -21,34 +21,4 @@ describe('Clutch Weather App', () => {
     cy.get('#form-input').type('atlanta');
     cy.get('#form-button').click();
   })
-
-
-  it('should make API request and receive success response', () => {
-    cy.intercept({
-      method: 'GET',
-      path: '**/onecall?lat=33.749&lon=-84.388'
-    }).as('oneCallResponse')
-
-    cy.wait('@oneCallResponse')
-    cy.get('@oneCallResponse').then(xhr => {
-      console.log('xhr response', xhr)
-      expect(xhr.response.statusCode).to.eq(200)
-    })
-  })
-
-  it('should render Forecast component content', () => {
-    cy.get('#forecast-container').should('exist')
-  })
-
-  it('should render CurrentDay component content', () => {
-    cy.get('#currentday-container').should('exist')
-  })
-
-  it('should render CurrentDayDetails component content', () => {
-    cy.get('#currentday-details-container').should('exist')
-  })
-
-  it('should render UpcomingDays component content', () => {
-    cy.get('#upcomingdays-details-container').should('exist')
-  })
 })
