@@ -12,7 +12,7 @@ const Form = ({ submitSearch }) => {
   }
       
   return (
-    <div className="flex justify-center items-center p-4">
+    <div className="flex justify-center items-center p-4" id="form-container">
       <form onSubmit={handleSubmit} className="xs:flex flex-col item-center justify-center sm:inline">
         <input 
           autoFocus={true}  
