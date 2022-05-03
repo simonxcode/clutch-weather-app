@@ -19,8 +19,8 @@
     "tailwindcss-cli": "^0.1.2"
   },
   "scripts": {
-    "start": "node index",
-    "start:client": "react-scripts start",
+    "start:server": "nyc --silent node index",
+    "start:client": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
     "test": "cypress open",
     "eject": "react-scripts eject",
@@ -43,6 +43,8 @@
     ]
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.9.12",
+    "@cypress/instrument-cra": "^1.4.0",
     "autoprefixer": "10.4.1",
     "cypress": "^9.6.0",
     "postcss": "^8.4.5",
