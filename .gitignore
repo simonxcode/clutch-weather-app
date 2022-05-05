@@ -6,7 +6,10 @@
 .pnp.js
 
 # testing
-/coverage
+/coverage/lcov-report
+/coverage/coverage-final.json
+/coverage/coverage-summary.json
+/coverage/lcov.info
 
 # production
 /build

@@ -19,7 +19,7 @@
     "tailwindcss-cli": "^0.1.2"
   },
   "scripts": {
-    "start:server": "nyc --silent node index",
+    "start": "nyc --silent node index",
     "start:client": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
     "test": "cypress open",
