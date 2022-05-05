@@ -1,6 +1,6 @@
 # Clutch Weather App  
 
-[![Clutch Weather App](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/uxccqc&style=plastic&logo=cypress)](https://dashboard.cypress.io/projects/uxccqc/runs)  
+[![Clutch Weather App](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/uxccqc&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/uxccqc/runs) [![codecov](https://codecov.io/gh/simonxcode/clutch-weather-app/branch/dev/graph/badge.svg?token=CAZDOQ3P2S)](https://codecov.io/gh/simonxcode/clutch-weather-app) 
 
 A weather app that you can depend on when you need it most. Search any city in the world and retrieve current weather details.  
 
