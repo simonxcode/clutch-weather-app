@@ -16,9 +16,4 @@ describe('Clutch Weather App', () => {
     cy.get('#page-header').should('have.text', 'Clutch Weather App')
     cy.get('#form-button').should('have.text', 'search')
   })
-
-  it('should allow user to enter city and submit', () => {
-    cy.get('#form-input').type('atlanta');
-    cy.get('#form-button').click();
-  })
 })
