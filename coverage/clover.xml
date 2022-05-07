@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651902371097" clover="3.2.0">
-  <project timestamp="1651902371097" name="All files">
-    <metrics statements="41" coveredstatements="39" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="45" coveredelements="43" complexity="0" loc="41" ncloc="41" packages="2" files="3" classes="3"/>
+<coverage generated="1651904669561" clover="3.2.0">
+  <project timestamp="1651904669562" name="All files">
+    <metrics statements="46" coveredstatements="34" conditionals="8" coveredconditionals="2" methods="3" coveredmethods="1" elements="57" coveredelements="37" complexity="0" loc="46" ncloc="46" packages="3" files="4" classes="4"/>
     <package name="clutch-weather-app">
       <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
       <file name="index.js" path="/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/index.js">
@@ -21,10 +21,21 @@
         <line num="21" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="clutch-weather-app.proxy-server.middleware">
+      <metrics statements="5" coveredstatements="2" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="error.js" path="/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/middleware/error.js">
+        <metrics statements="5" coveredstatements="2" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="clutch-weather-app.proxy-server.routes">
-      <metrics statements="28" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="28" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <file name="onecall.js" path="/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/onecall.js">
-        <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="14" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -32,16 +43,16 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="10" count="14" type="stmt"/>
-        <line num="11" count="14" type="stmt"/>
-        <line num="16" count="14" type="stmt"/>
-        <line num="17" count="14" type="stmt"/>
-        <line num="19" count="14" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
       </file>
       <file name="weather.js" path="/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/weather.js">
-        <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="14" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -49,11 +60,11 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="10" count="15" type="stmt"/>
-        <line num="11" count="15" type="stmt"/>
-        <line num="16" count="15" type="stmt"/>
-        <line num="17" count="14" type="stmt"/>
-        <line num="19" count="14" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
       </file>
