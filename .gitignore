@@ -10,6 +10,7 @@
 /coverage/coverage-final.json
 /coverage/coverage-summary.json
 /coverage/lcov.info
+/.nyc_output
 
 # production
 /build
