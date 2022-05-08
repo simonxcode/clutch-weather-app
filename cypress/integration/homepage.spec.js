@@ -17,6 +17,9 @@ describe('Clutch Weather App', () => {
   })
 
   it('should allow a city to be entered and searched', function() {
+    cy.on('uncaught:exception', (err, runnable, promise) => {
+      if(promise) return false
+    })
     cy.visit('http://localhost:8000/');
     cy.get('#form-input').type('atlanta');
     cy.get('#form-button').click();
