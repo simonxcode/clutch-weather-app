@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import CurrentDayDetailsItems from'../CurrentDayDetailsItems'
 
 const CurrentDayDetails = ({ forecast }) => (
-  <div className="bg-slate-50 p-2 m-2 md:ml-0" id="currentday-details-container">
+  <div className="bg-slate-50 p-2 m-2 md:ml-0" data-cy="current-day-details">
     {forecast.map(item => (
       <CurrentDayDetailsItems key={item.name} {...item} />
     ))}

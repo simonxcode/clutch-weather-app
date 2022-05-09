@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const UpcomingDaysDetails = ({ weatherIcon, weekday, lowTemp, highTemp }) => (
-  <li className="inline-block p-4 text-sky-900">
+  <li className="inline-block p-4 text-sky-900" data-cy="upcoming-days-details">
     <img src={weatherIcon} alt='weather icon' className="w-16" />
     <p className="text-center font-semibold">{weekday}</p>
     <p className="text-center">{highTemp} / {lowTemp}°F</p>
