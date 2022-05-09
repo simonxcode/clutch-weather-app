@@ -14,7 +14,7 @@ const ClutchWeatherApp = () => {
   }
 
   return (
-    <div id="homepage">
+    <div data-cy="homepage">
       <Header/>
       <Form submitSearch={onSubmit} />
       {isLoading && <Loader />}
