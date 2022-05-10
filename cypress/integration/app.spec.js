@@ -14,7 +14,7 @@ describe('Clutch Weather App', () => {
 
   it('should render Header content', () => {
     cy.get('[data-cy=page-header]').should('exist')
-        cy.get('[data-cy=page-header]').should('have.text', 'Clutch Weather App')
+    cy.get('[data-cy=page-header]').should('have.text', 'Clutch Weather App')
   })
 
   it('should render Form content', () => {
@@ -24,7 +24,7 @@ describe('Clutch Weather App', () => {
     cy.get('[data-cy=form-button]').should('have.text', 'search')
   })
 
-  it('should allow a city to be entered and searched on Form', function() {
+  it('should allow a city to be entered and searched on Form', () => {
     cy.get('[data-cy=form-input]').type('atlanta');
     cy.get('[data-cy=form-button]').click();
   })
