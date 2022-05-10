@@ -1,4 +1,11 @@
 describe('Clutch Weather App', () => {
+  beforeEach(() => {
+    cy.on('uncaught:exception', (err, runnable, promise) => {
+      if (promise) return false
+    cy.get('[data-cy=form-input]').type('atlanta');
+    cy.get('[data-cy=form-button]').click();
+    })
+  })
 
   it('should render ClutchWeatherApp content', () => {
     cy.visit('/')
@@ -18,11 +25,12 @@ describe('Clutch Weather App', () => {
   })
 
   it('should allow a city to be entered and searched on Form', function() {
-    cy.on('uncaught:exception', (err, runnable, promise) => {
-      if (promise) return false
-    })
     cy.get('[data-cy=form-input]').type('atlanta');
     cy.get('[data-cy=form-button]').click();
+  })
+
+  it('should render Forecast content', () => {
+    cy.get('[data-cy=forecast-container]').should('exist')
   })
 
   it('should render CurrentDay content', () => {
