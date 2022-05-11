@@ -17,9 +17,14 @@ describe('Clutch Weather App', () => {
     cy.get('[data-cy=form-button]').should('have.text', 'search')
   })
 
-  it('should allow a city to be searched and render application content', () => {
+  it('should allow a city to be searched and render content', () => {
+    cy.on('uncaught:exception', (err, runnable, promise) => {
+      if (promise) return false
+    })
+
     cy.get('[data-cy=form-input]').type('atlanta');
     cy.get('[data-cy=form-button]').click();
+
     cy.get('[data-cy=forecast-container]').should('exist')
     cy.get('[data-cy=current-day]').should('exist')
     cy.get('[data-cy=current-day-details]').should('exist')
