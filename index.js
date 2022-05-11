@@ -3,9 +3,11 @@ const cors = require('cors')
 require('dotenv').config()
 const errorHandler = require('./proxy-server/middleware/error')
 
+
 const PORT = process.env.PORT || 8000
 
 const app = express()
+require('@cypress/code-coverage/middleware/express')(app)
 
 app.use(cors())
 
