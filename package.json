@@ -15,7 +15,7 @@
     "postcss-cli": "^9.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
+    "react-scripts": "5.0.1",
     "tailwindcss-cli": "^0.1.2"
   },
   "scripts": {
@@ -29,7 +29,9 @@
     "build:watch": "postcss src/style/tailwind.css -o src/style/main.css --watch"
   },
   "nyc": {
-    "exclude": ["proxy-server/middleware/error.js"]
+    "exclude": [
+      "proxy-server/middleware/error.js"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
