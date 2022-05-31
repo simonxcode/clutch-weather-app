@@ -129,11 +129,46 @@
         },
         "end": {
           "line": 21,
-          "column": 16
+          "column": 69
+        }
+      },
+      "13": {
+        "start": {
+          "line": 21,
+          "column": 23
+        },
+        "end": {
+          "line": 21,
+          "column": 68
         }
       }
     },
-    "fnMap": {},
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 21,
+            "column": 17
+          },
+          "end": {
+            "line": 21,
+            "column": 18
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 21,
+            "column": 23
+          },
+          "end": {
+            "line": 21,
+            "column": 68
+          }
+        },
+        "line": 21
+      }
+    },
     "branchMap": {
       "0": {
         "loc": {
@@ -185,9 +220,12 @@
       "9": 1,
       "10": 1,
       "11": 1,
-      "12": 1
+      "12": 1,
+      "13": 1
     },
-    "f": {},
+    "f": {
+      "0": 1
+    },
     "b": {
       "0": [
         1,
@@ -195,7 +233,7 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "12c9376652d12876136439dab41271cc2d8baa54"
+    "hash": "01d0bb47c459f8da54ebea0b3510956c1167e601"
   },
   "/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/weather.js": {
     "path": "/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/weather.js",
@@ -266,7 +304,7 @@
           "column": 0
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 2
         }
       },
@@ -276,7 +314,7 @@
           "column": 2
         },
         "end": {
-          "line": 22,
+          "line": 23,
           "column": 3
         }
       },
@@ -312,31 +350,41 @@
       },
       "11": {
         "start": {
-          "line": 19,
+          "line": 18,
           "column": 4
         },
         "end": {
-          "line": 19,
-          "column": 30
+          "line": 18,
+          "column": 41
         }
       },
       "12": {
         "start": {
-          "line": 21,
+          "line": 20,
           "column": 4
         },
         "end": {
-          "line": 21,
-          "column": 15
+          "line": 20,
+          "column": 30
         }
       },
       "13": {
         "start": {
-          "line": 25,
+          "line": 22,
+          "column": 4
+        },
+        "end": {
+          "line": 22,
+          "column": 15
+        }
+      },
+      "14": {
+        "start": {
+          "line": 26,
           "column": 0
         },
         "end": {
-          "line": 25,
+          "line": 26,
           "column": 23
         }
       }
@@ -360,7 +408,7 @@
             "column": 42
           },
           "end": {
-            "line": 23,
+            "line": 24,
             "column": 1
           }
         },
@@ -381,15 +429,16 @@
       "9": 2,
       "10": 1,
       "11": 1,
-      "12": 0,
-      "13": 1
+      "12": 1,
+      "13": 0,
+      "14": 1
     },
     "f": {
       "0": 2
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "96bd46c8db4b33741eced4d491f9ce2cc47c52f8"
+    "hash": "c643dfea42fbd532c94bae90105dcf03c95b9562"
   },
   "/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/onecall.js": {
     "path": "/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/onecall.js",
