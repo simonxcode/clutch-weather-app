@@ -129,46 +129,11 @@
         },
         "end": {
           "line": 21,
-          "column": 69
-        }
-      },
-      "13": {
-        "start": {
-          "line": 21,
-          "column": 23
-        },
-        "end": {
-          "line": 21,
-          "column": 68
+          "column": 16
         }
       }
     },
-    "fnMap": {
-      "0": {
-        "name": "(anonymous_0)",
-        "decl": {
-          "start": {
-            "line": 21,
-            "column": 17
-          },
-          "end": {
-            "line": 21,
-            "column": 18
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 21,
-            "column": 23
-          },
-          "end": {
-            "line": 21,
-            "column": 68
-          }
-        },
-        "line": 21
-      }
-    },
+    "fnMap": {},
     "branchMap": {
       "0": {
         "loc": {
@@ -220,12 +185,9 @@
       "9": 1,
       "10": 1,
       "11": 1,
-      "12": 1,
-      "13": 1
+      "12": 1
     },
-    "f": {
-      "0": 1
-    },
+    "f": {},
     "b": {
       "0": [
         1,
@@ -233,7 +195,7 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "01d0bb47c459f8da54ebea0b3510956c1167e601"
+    "hash": "12c9376652d12876136439dab41271cc2d8baa54"
   },
   "/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/weather.js": {
     "path": "/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/weather.js",
@@ -304,7 +266,7 @@
           "column": 0
         },
         "end": {
-          "line": 24,
+          "line": 23,
           "column": 2
         }
       },
@@ -314,7 +276,7 @@
           "column": 2
         },
         "end": {
-          "line": 23,
+          "line": 22,
           "column": 3
         }
       },
@@ -350,41 +312,31 @@
       },
       "11": {
         "start": {
-          "line": 18,
+          "line": 19,
           "column": 4
         },
         "end": {
-          "line": 18,
-          "column": 41
+          "line": 19,
+          "column": 30
         }
       },
       "12": {
         "start": {
-          "line": 20,
+          "line": 21,
           "column": 4
         },
         "end": {
-          "line": 20,
-          "column": 30
+          "line": 21,
+          "column": 15
         }
       },
       "13": {
         "start": {
-          "line": 22,
-          "column": 4
-        },
-        "end": {
-          "line": 22,
-          "column": 15
-        }
-      },
-      "14": {
-        "start": {
-          "line": 26,
+          "line": 25,
           "column": 0
         },
         "end": {
-          "line": 26,
+          "line": 25,
           "column": 23
         }
       }
@@ -408,7 +360,7 @@
             "column": 42
           },
           "end": {
-            "line": 24,
+            "line": 23,
             "column": 1
           }
         },
@@ -424,21 +376,20 @@
       "4": 1,
       "5": 1,
       "6": 1,
-      "7": 2,
-      "8": 2,
-      "9": 2,
-      "10": 1,
-      "11": 1,
-      "12": 1,
-      "13": 0,
-      "14": 1
+      "7": 9,
+      "8": 9,
+      "9": 9,
+      "10": 8,
+      "11": 8,
+      "12": 0,
+      "13": 1
     },
     "f": {
-      "0": 2
+      "0": 9
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "c643dfea42fbd532c94bae90105dcf03c95b9562"
+    "hash": "96bd46c8db4b33741eced4d491f9ce2cc47c52f8"
   },
   "/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/onecall.js": {
     "path": "/Users/simonxiong/Desktop/Github Projects/clutch-weather-app/proxy-server/routes/onecall.js",
@@ -619,16 +570,16 @@
       "4": 1,
       "5": 1,
       "6": 1,
-      "7": 1,
-      "8": 1,
-      "9": 1,
-      "10": 1,
-      "11": 1,
+      "7": 7,
+      "8": 7,
+      "9": 7,
+      "10": 7,
+      "11": 7,
       "12": 0,
       "13": 1
     },
     "f": {
-      "0": 1
+      "0": 7
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
